@@ -5,7 +5,7 @@ A browser-based log analyzer. Paste or open a log file and get format detection,
 ## Quick start
 
 ```bash
-git clone https://github.com/<your-user>/log-analyzer.git
+git clone https://github.com/s4ntrx/Log-Analyzer.git
 cd log-analyzer
 npm start        # serves http://localhost:8080
 npm test         # runs the parser tests (Node 18+)
@@ -65,6 +65,3 @@ Push to `main` and enable **Settings > Pages > Source: GitHub Actions**. The `pa
 
 Add a format by writing a regex and a branch in `parseLine` in `src/parser.js`, plus a test in `tests/parser.test.js`. Run `npm test` before opening a pull request.
 
-## License
-
-MIT
