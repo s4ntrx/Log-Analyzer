@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Log Analyzer</title>
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+<main>
+  <div class="head">
+    <h1>Log analyzer</h1>
+    <p class="muted">Runs in your browser. Nothing is uploaded.</p>
+  </div>
+
+  <section class="panel">
+    <textarea id="input" aria-label="Log text" placeholder="Paste log lines here: JSON lines, nginx/Apache access logs, ISO-timestamp app logs, or syslog"></textarea>
+    <div class="actions">
+      <button class="primary" id="analyze"><svg class="i" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Analyze</button>
+      <label class="btn"><svg class="i" viewBox="0 0 24 24"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 21h14"/></svg>Open file<input type="file" id="file" accept=".log,.txt,.json,.jsonl,.out,text/*"></label>
+      <button id="sample"><svg class="i" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5"/></svg>Load sample</button>
+      <button id="clear"><svg class="i" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>Clear</button>
+    </div>
+    <p class="muted" id="status" style="margin-top:12px" role="status"></p>
+  </section>
+
+  <div id="results" hidden>
+    <div class="stats" id="stats"></div>
+
+    <section class="panel" style="margin-top:16px">
+      <div class="toolbar">
+        <div class="search">
+          <svg class="i" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+          <input id="query" type="search" aria-label="Search log messages" placeholder="Search messages">
+        </div>
+        <div class="toolbar" id="chips"></div>
+      </div>
+    </section>
+
+    <div class="grid" style="margin-top:16px">
+      <section class="panel"><h2>Volume over time</h2><div class="scroll" id="timeline"></div></section>
+      <section class="panel"><h2>Most repeated messages</h2><div id="patterns"></div></section>
+    </div>
+
+    <section class="panel" style="margin-top:16px">
+      <h2 id="tableTitle">Entries</h2>
+      <div class="scroll"><table><thead><tr><th>Time</th><th>Level</th><th>Message</th></tr></thead><tbody id="rows"></tbody></table></div>
+    </section>
+  </div>
+</main>
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

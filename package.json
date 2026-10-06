@@ -1,0 +1,13 @@
+{
+  "name": "log-analyzer",
+  "version": "1.0.0",
+  "description": "Browser-based log analyzer: auto-detects formats, charts volume, groups repeated errors.",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node --test tests/*.test.js"
+  }
+}
