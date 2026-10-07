@@ -50,9 +50,7 @@ tests/parser.test.js  node:test suite
 .github/workflows/    CI and GitHub Pages deploy
 ```
 
-## Deploy
 
-Push to `main` and enable **Settings > Pages > Source: GitHub Actions**. The `pages.yml` workflow publishes the site.
 
 ## Limits
 
